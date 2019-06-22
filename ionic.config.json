@@ -1,0 +1,7 @@
+{
+  "name": "gamepoints-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
