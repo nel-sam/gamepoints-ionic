@@ -1,4 +1,19 @@
-.welcome-card ion-img {
-  max-height: 35vh;
-  overflow: hidden;
+@import './../../theme/variables.scss';
+
+.circle {
+  width: 300px;
+  height: 300px;
+  font-size: 50px;
+  line-height: 300px;
+  border-radius: 50%;
+  color: var(--ion-color-primary-contrast);
+  text-align: center;
+  vertical-align: middle;
+  background-color: var(--ion-color-primary);
+}
+
+.center {
+  margin: auto;
+  display: block;
+  transform: translate(0%, 45%);
 }
