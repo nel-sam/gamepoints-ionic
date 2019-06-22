@@ -10,11 +10,16 @@
 </ion-header>
 
 <ion-content *ngIf="showWelcome" (click)="onStartGameClick()">
-  <div >
-      <ion-img src="./../../assets/game.jpg" id="background"></ion-img>
-  <!-- <ion-img src="/assets/shapes.svg"></ion-img> -->
-    <div class="circle center pulse-full">Start</div>
-</div>
+  <ion-img src="./../../assets/game.jpg" class="parallax" id="background"></ion-img>
+  <div class="circle center pulse-full-white">Start</div>
+</ion-content>
+
+<ion-content *ngIf="showPlayerEntry" (click)="onStartGameClick()">
+  <ion-list-header>
+    <ion-label class="slide-in" >Enter players</ion-label>
+  </ion-list-header>
+</ion-content>
+
     <!-- <ion-list lines="none">
       <ion-list-header>
         <ion-label>Resources</ion-label>
@@ -36,4 +41,3 @@
         <ion-label>Theme Your App</ion-label>
       </ion-item>
     </ion-list> -->
-</ion-content>
