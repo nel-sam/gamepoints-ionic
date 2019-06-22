@@ -13,10 +13,18 @@
 {
   0% {
       box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
+      transform: scale(1);
   }
   100% {
     box-shadow: 0 0 0 800px rgba(0, 0, 0, 0);
-
+    transform: scale(0.9);
   }
 }
 
+@media all and (orientation: landscape) {
+  .center {
+    margin: auto;
+    display: block;
+    margin-top: 7%;
+  }
+}
