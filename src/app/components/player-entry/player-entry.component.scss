@@ -1,3 +1,9 @@
+.new-player-input {
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--ion-color-primary);
+}
+
 @media all and (orientation: landscape) {
   #player-entry-input {
     width: 50%;
