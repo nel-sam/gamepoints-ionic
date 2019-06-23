@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "gamepoints-ionic",
+  "appId": "com.nrsdev.gamepoints",
+  "appName": "GamePoints",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www"

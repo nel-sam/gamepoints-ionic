@@ -13,7 +13,11 @@ export class PlayerComponent implements OnInit {
 
   ngOnInit() {}
 
-  public decrementPoints(): void {
+  public incrementPoints(): void {
+    this.points++;
+  }
 
+  public decrementPoints(): void {
+    this.points--;
   }
 }
