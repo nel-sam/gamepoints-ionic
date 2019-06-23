@@ -14,7 +14,8 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
-  }
+  },
+  { path: 'main', loadChildren: './pages/main/main.module#MainPageModule' }
 ];
 
 @NgModule({

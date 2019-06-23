@@ -1,0 +1,70 @@
+// Animations
+.slide-in {
+  animation: fade-in 0.35s linear, slide-from-left 0.7s linear;
+}
+
+@keyframes slide-from-left {
+  0%   { transform: scale(1,1)      translateX(0); }
+  10%  { transform: scale(1.1,.9)   translateX(0); }
+  30%  { transform: scale(.9,1.1)   translateX(-100px); }
+  50%  { transform: scale(1.05,.95) translateX(0); }
+  57%  { transform: scale(1,1)      translateX(-7px); }
+  64%  { transform: scale(1,1)      translateX(0); }
+  100% { transform: scale(1,1)      translateX(0); }
+}
+
+.fade-in {
+  animation: fade-in 0.3s linear;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0;}
+  50% { opacity: 0.35;}
+  100% { opacity: 1;}
+}
+
+.pulse-full {
+  animation: shadow-pulse-full 1s infinite;
+}
+
+@keyframes shadow-pulse-full
+{
+  0% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.1);
+      transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 0 800px rgba(0, 0, 0, 0);
+    transform: scale(0.95);
+  }
+}
+
+.pulse-full-white {
+  animation: shadow-pulse-full-white 1s infinite;
+}
+
+@keyframes shadow-pulse-full-white
+{
+  0% {
+      box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.1);
+      transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 0 800px rgba(255, 255, 255, 0);
+    transform: scale(0.95);
+  }
+}
+
+.parallax {
+  animation: parallax 20s infinite alternate;
+}
+
+@keyframes parallax
+{
+  0% {
+      transform: scale(1.8);
+  }
+  100% {
+    transform: scale(1.4);
+  }
+}
