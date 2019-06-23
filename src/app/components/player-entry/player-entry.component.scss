@@ -4,6 +4,10 @@
   border: 1px solid var(--ion-color-primary);
 }
 
+.player-delete-icon {
+  color: var(--ion-color-danger);
+}
+
 @media all and (orientation: landscape) {
   #player-entry-input {
     width: 50%;

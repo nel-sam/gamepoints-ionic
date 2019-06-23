@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
 import { Player } from '../../interfaces/interfaces';
+import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
+import { NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-player-entry',
@@ -37,12 +40,26 @@ export class PlayerEntryComponent implements OnInit {
     } as Player,
   ];
 
-  constructor() { }
+  navigationExtras: NavigationExtras = {
+    queryParams: {
+      players: JSON.stringify(this.players),
+    }
+  };
 
-  ngOnInit() {}
+  constructor(
+    public toastController: ToastController,
+    public navCtrl: NavController) {
+  }
+
+  ngOnInit() { }
 
   public addPlayer(): void {
-    if (this.playerName === undefined || this.playerName.length === 0) {
+    if (!this.playerNameEntered()) {
+      return;
+    }
+
+    if (this.players.find(x => x.name === this.playerName) !== undefined) {
+      this.presentPlayerExistsToast();
       return;
     }
 
@@ -54,11 +71,28 @@ export class PlayerEntryComponent implements OnInit {
     this.playerName = '';
   }
 
+  public playerNameEntered(): boolean {
+    return (this.playerName !== undefined && this.playerName.length !== 0);
+  }
+
+  async presentPlayerExistsToast() {
+    const toast = await this.toastController.create({
+      message: 'That player was already added',
+      color: 'warning',
+      duration: 2000
+    });
+    toast.present();
+  }
+
   public incrementPoints(): void {
     this.goalPoints++;
   }
 
   public decrementPoints(): void {
     this.goalPoints--;
+  }
+
+  public onStartButtonClicked(): void {
+    this.navCtrl.navigateForward(['game'], this.navigationExtras);
   }
 }
